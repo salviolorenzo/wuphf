@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Header from './Components/Header/Header';
+import Main from './Components/Main/Main';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-    </div>
-  );
-}
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      socials: [
+        { name: 'phone', url: '' },
+        { name: 'facebook', url: 'facebook.com' },
+        { name: 'twitter', url: 'twitter.com' },
+        { name: 'email', url: '' }
+      ]
+    };
+  }
 
-export default App;
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <Main />
+      </div>
+    );
+  }
+}
