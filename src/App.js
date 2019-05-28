@@ -8,10 +8,14 @@ export default class App extends Component {
     super(props);
     this.state = {
       socials: [
-        { name: 'phone', url: '' },
-        { name: 'facebook', url: 'facebook.com' },
-        { name: 'twitter', url: 'twitter.com' },
-        { name: 'email', url: '' }
+        { name: 'phone', url: '', class: 'fas fa-phone-square' },
+        { name: 'email', url: '', class: 'fas fa-at' },
+        {
+          name: 'facebook',
+          url: 'facebook.com',
+          class: 'fab fa-facebook-square'
+        },
+        { name: 'twitter', url: 'twitter.com', class: 'fab fa-twitter-square' }
       ]
     };
   }
@@ -20,7 +24,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Main />
+        <Main socials={this.state.socials} />
       </div>
     );
   }
